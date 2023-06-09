@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <title>CSS intro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пес Патрон</title>
+  <!-- або тут додаємо шрифти, або в css-файлі за допомогою @import -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <style>
-    /* внутрішні стилі */
-    /*p {
-       color:red;
-    } */
-  </style>
-  
 </head>
 <body>
 
-  <h1>Lorem ipsum dolor sit amet.</h1>
+  <header>
+    <img class="profile-photo" src="https://img.tsn.ua/cached/451/tsn-84ee4f9844c21d3af2b3cfbad2c9c711/thumbs/608xX/a2/a1/f5239eb79fc978e2bd5447f09179a1a2.jpeg" alt="Пес Патрон">
+    <h1>Пес Патрон</h1>
+    <p class="phrase">Завжди на варті вашої безпеки. Завжди на варті вашої безпеки.Завжди на варті вашої безпеки.Завжди на варті вашої безпеки.</p>
+  </header>
 
-  <!-- вбудовані стилі (інлайн) -->
-  <!-- <p style="color:cadetblue; background-color: burlywood;"></p> -->
-  
-  <p class="green-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore cumque illum nostrum quis dolor facere voluptate nobis eligendi nemo numquam, cum praesentium fugiat rerum suscipit ipsam voluptatem vero laborum debitis!</p>
+  <main>
+    <h2 class="experience-section-title">Досвід</h2>
+    <ul class="experiences-list">
+      <li class="experience-item">Senior з розмінування</li>
+      <li class="experience-item">Зірка Instagram</li>
+      <li class="experience-item">Присутній на марці і конверті Укрпошти</li>
+      <li class="experience-item">Офіційний символ Міжнародного координаційного центру з питань гуманітарного розмінування</li>
+      <li class="experience-item">Символ безпеки</li>
+    </ul>
+  </main>
 
-  <p class="green-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore cumque illum nostrum quis dolor facere voluptate nobis eligendi nemo numquam, cum praesentium fugiat rerum suscipit ipsam voluptatem vero laborum debitis!</p>  
-  
-  <p style="color:yellow" id="red-paragraph"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore cumque illum nostrum quis dolor facere voluptate nobis eligendi nemo numquam, cum praesentium fugiat rerum suscipit ipsam voluptatem vero laborum debitis!</p>
-
-  <button class="green-paragraph">Click me!</button>
+  <footer>
+    <a href="#">Instagram</a>
+  </footer>
 
 </body>
 </html>
