@@ -2,38 +2,11 @@
    box-sizing: border-box; 
 }
 
-html {
-  font-size: 10px;
-}
 
-body {
-  margin: 0;
-}
-
-div {
-  width: 100%; /*px, %, em, rem, vh, vw*/
-  border: 10px solid red;
-
-  /* додавання скролу: одного або обох */
-  /* overflow: scroll; */
-  /* overflow-y: scroll; */
-  padding: 1.5em;
-  /*margin: 20px; */
-}
-
-h2 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-/* header {
-  height: 100vh;
-  background-color: aquamarine;
+/* span {
+  width: 50px;
+  height: 100px;
+  padding: 100px;
+  border: 5px solid red;
+  margin: 20px;
 } */
-
-main {
-  border: 3px solid red;
-  max-width: 800px;
-  margin:  0 auto;
-}
