@@ -1,50 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-html {
-  /* зручно задати розмір шрифта в рутовому елементі та обраховувати розміри шрифта інших елементів відносно нього за допомогою rem*/
-  font-size: 14px;
-  /* якщо весь макет використовує один шрифт, то зручно задати його в рутовому елементі і він буде успадкований всіма елементами */
-  font-family: 'Roboto', sans-serif;
+p {
+  width: 300px;
+  display: inline;
 }
 
-.profile-photo {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 50%;
-  border: 5px grey dotted; 
-  /* розширений опис властивості border
-  border-width: 5px;
-  border-style: solid;
-  border-color: grey; */
-}
-
-header{
-  background-image: url(https://www.volynnews.com/files/news/2022/08-23/345345/62d7d9051b385-pes-patron-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right bottom;
-  background-color: darkgrey;
-  /* background-attachment: fixed; */
-  color:white;
-  font-size: 14px;
-}
-
-main{
-  background-image:  linear-gradient(to right, yellow, green);
-}
-
-.phrase {
-  font-size: 1.5rem; /* px, em, rem */
-  font-weight: bold;  /* жирність шрифту */
-  font-style: italic; /* нахиленість шрифту */
-  text-align: justify; /* центрування тексту зліва/справа/по центру/по ширині */
-  line-height: 1.5; /* висота рядка, впливає на вертикальну відстань між рядками*/
-}
-
-/* типові стилі для посилання: колір від батьківського елемента, підкреслення прибрати */
-a {
-  color: inherit;
-  text-decoration: none;
+li {
+  display: inline;
 }
