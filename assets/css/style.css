@@ -2,52 +2,34 @@
    box-sizing: border-box; 
 }
 
-/* .parent { */
-  /* border: 5px solid blue; */
-  /* height: 600px; */
-  /* flex parent */
-  /* display: flex; */
-  /* flex-direction: row; головна вісь */
-  /* justify-content: flex-start;
+.parent {
+  border: 5px solid blue;
+  /* padding: 100px 0; */
+  height: 80vh;
 
+  /* flex parent properties*/
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  /* flex-wrap: wrap; */
+  /* align-content: space-between; */
 }
 
 .child {
   border: 5px solid red;
   font-size: 36px;
-  width: 100px;
-  height: 100px;
+  padding: 20px;
+  /* width: 400px; */
+  /* height: 100px; */
+
+  /* flex child properties*/
+  flex: 1 1 400px;
 }
 
 .child4 {
-  margin-left: auto;
-}  */
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
-
-header, main, footer {
-  border: 5px solid blue;
-}
-
-main {
-  max-width: 800px;
-  width: 100%;
-  min-width: 320px;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-around;
-}
-
-footer {
-  margin-top: auto;
-}
-
-p {
-  width: 40%;
-}
+  /* flex child properties*/
+  /* margin-left: auto; */
+  /* align-self: flex-end; */
+  order: -1;
+}  
