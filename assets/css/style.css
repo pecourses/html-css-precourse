@@ -1,109 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Poppins:wght@700&display=swap');
+
 * {
-   box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+/* В кореневому елементі встіновлюємо наслідувані спільні
+ для всіх (переважної більшості) елементів властивості */
+:root {
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+
+  /* повторно використовувані значення зручно винести в змінні */
+  --bg-blue-color: #f1fdff;
+  --bg-yellow-color: #f9fadf;
+  --secondary-blue-color: #7ae5fd;
+
+  --page-side-padding: 7vw;
+  --header-height: 90px;
+
+  --closely-letter-spacing: -0.02em;
+  --closely-line-height: 0.949;
 }
 
 body {
+  line-height: 1.2;
+}
+
+/* Загальні властивості */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s linear transform;
+  display: inline-block;
+}
+
+a:hover,
+.subscribe-btn:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  font-size: 0;
   margin: 0;
+  padding: 0;
 }
 
-/* nav {
-  position: fixed;
-  top: 0;
-} */
+/* Для адаптивності місцями використовуються відносні одиниці, для виключно десктопа 
+   код був би не такий розлогий, але адаптивність наше все) */
+/* Також для адаптивності існує зручна функція clamp, вона б дозволила ще скоротити код */
+/* Наразі в макеті певний консенсус між pixel-perfect
+   і засобами, що дозволяють зручно реалізовувати адаптивність,
+   але не забезпечують допіксельних відповідностей обом (кільком) макетам */
 
-nav {
+h1 {
+  font-size: 5.8rem;
+  color: #9ad2de;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: var(--closely-line-height);
+  letter-spacing: var(--closely-letter-spacing);
+  margin-bottom: 0.7em;
+}
+
+h2 {
+  font-size: 3.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.1em;
+  letter-spacing: var(--closely-letter-spacing);
+}
+
+h3 {
+  font-size: 2.875rem;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+  letter-spacing: var(--closely-letter-spacing);
+}
+
+.h2-description {
+  font-size: 1.6875rem;
+}
+
+.h2-additional-description {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #73a6b1;
+}
+
+.content-wrapper {
+  padding: 0 100px;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.burger-lines,
+.burger-checkbox {
+  display: none;
+}
+
+/* --- HEADER --- */
+
+.page-header {
   position: sticky;
-  top:0;
-  z-index: 3;
-}
-
-.parent {
-  /* margin-top: 100px; */
-  border: 5px solid blue;
-  position: relative;
-}
-
-.child {
-  border: 5px solid red;
-  width: 100px;
-  height: 100px;
-  font-size: 36px;
-}
-
-/* --- непозиціонований елемент - займає стандартне місце в нормальному потоці --- */
-
-.child1 {
-  position: static; /* дефолтне значення*/
-}
-
-/* --- позиціонований елемент - переміщений відносно свого місця в нормальному потоці --- */
-
-/* - ВІДНОСНЕ позиціонування - */
-
-/* місце в потоці резервується, 
-поз-ся відносно свого положення */
-
-.child2 {
-  border: 5px solid green;
-  background-color: aqua;
-  position: relative; 
-  /* top/right/bottom/left/z-index */
-  /* top: 10px; */
-  /* left: 50px; */
-  /* bottom: -20px; */
-  /* right: -30px; */
-  z-index: 1;
-}
-
-/* - АБСОЛЮТНЕ позиціонування - */
-
-/* місце в потоці звільняється, 
-поз-ся відносно свого позиціонованого батьтківського ел-та */
-
-.child3 {
-  position: absolute;
-  /* width: auto;
-  height: auto; */
-  top:0;
-  bottom: 0;
-  left: 50%;
+  top: -40px;
+  left: 0;
   right: 0;
-  background-color: grey;
-  opacity: 1;
-  z-index: 1;
+  z-index: 3;
+  padding-top: 60px;
+  height: var(--header-height);
+  font-size: 1.125rem;
 }
 
-/* - ФІКСОВАНЕ позиціонування - */
-
-/* місце в потоці звільняється, 
-поз-ся відносно в'юпорта */
-
-.child4 {
-  background-color: yellow;
+.header-bg {
   position: fixed;
-  /* top: 150px; */
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  bottom: 50px;
-  right: 50px;
-  z-index: -5000;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: var(--header-height);
+  background-color: white;
 }
 
-/* - ЛИПКЕ позиціонування - */
-
-/* relative + fixed */
-.child5 {
+.nav-container {
   position: sticky;
   top: 0;
-  background-color: pink;
-  z-index: -1;
 }
 
-/* особливості поводження body */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-body {
+.logo {
+  margin-right: auto;
+}
+
+.logo-link {
+  width: 4rem;
+  height: 4rem;
+}
+
+.nav-link {
+  padding: 0.8em;
+}
+
+/* --- MAIN --- */
+
+.page-main {
+  margin-top: calc(-1 * var(--header-height));
+}
+
+/* --- FIRST SCREEN --- */
+
+.first-screen {
+  display: flex;
+  min-height: 729px;
+  background-color: var(--bg-blue-color);
+
   position: relative;
-  background-color: aqua;
-  z-index: 5000;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.first-screen-wrapper {
+  position: relative;
+  padding-top: calc(100px + 7vw);
+}
+
+.first-screen-description {
+  font-size: 1.25rem;
+}
+
+.new-line {
+  display: block;
+}
+
+.woman-with-flag {
+  position: absolute;
+  left: 29.5%;
+  bottom: 0;
+  width: calc(1080px + 25%);
+  max-width: 1448px;
+  object-fit: cover;
+}
+
+/* --- FESTIVAL PROGRAM --- */
+
+.festival-program {
+  margin: 8.9em 0 2.7em;
+}
+
+.festival-program-header,
+.festival-program-footer {
+  text-align: center;
+}
+
+/* --- SCENE --- */
+
+.scene-count {
+  margin-bottom: 0.37em;
+}
+
+.scene-place {
+  margin: 0 auto 3.45em;
+  max-width: 588px;
+}
+
+.scene {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 4em 0;
+  padding: 2.5em;
+  border-radius: 10px;
+  background-color: var(--bg-blue-color);
+}
+
+.scene > * {
+  width: 50%;
+}
+
+.scene-description {
+  font-size: 20px;
+}
+
+.events-list {
+  margin-top: 3.75em;
+}
+
+.event-item {
+  margin: 40px 0;
+  font-size: 16px;
+}
+
+.event {
+  margin: 0.625em 0;
+}
+
+.event-time {
+  color: #3d8c9d;
+}
+
+.scene-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene-image {
+  position: relative;
+  max-width: 575px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* --- BENEFITS --- */
+
+.benefits {
+  position: relative;
+  background-image: url(./../imgs/benefits-curve.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 16em 1.5em 11em 1.5em;
+}
+
+.benefits-description-wrapper {
+  background-color: var(--bg-blue-color);
+  padding: 5.5em 2.5em;
+}
+
+.benefits-description {
+  max-width: 14.5em;
+}
+
+.benefits-gifts {
+  position: absolute;
+  right: 25%;
+  top: calc(40px + 50%);
+  transform: translate(50%, -50%);
+  max-width: 430px;
+  width: 30vw;
+}
+
+/* --- HOW TO GET --- */
+
+.how-to-get-into {
+  text-align: center;
+  margin: 4.25em 0 8.8em;
+}
+
+.how-to-get-into-description {
+  margin: 0 auto 3.85em;
+  max-width: 739px;
+}
+
+.how-to-get-into-goal {
+  margin-bottom: 17px;
+}
+
+.current-amounts {
+  margin-bottom: 3.5em;
+  white-space: nowrap;
+}
+
+.current-amount {
+  font-size: 60px;
+  letter-spacing: var(--closely-letter-spacing);
+  padding: 0 10px;
+}
+
+.current-amount + .current-amount {
+  border-left: 1px solid var(--secondary-blue-color);
+}
+
+/* --- CONTACTS --- */
+
+.page-footer {
+  background-color: var(--bg-yellow-color);
+  padding: 3.5em 0 7.25em;
+}
+
+.contacts-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.contacts-wrapper > * {
+  width: 50%;
+}
+
+.contacts-numbers {
+  font-size: 1.25rem;
+}
+
+.contacts-icons {
+  margin-bottom: 5px;
+}
+
+.contacts-icons + .contacts-icons {
+  margin-left: 16px;
+}
+
+.contacts-invites {
+  max-width: 22em;
+  margin-bottom: 2em;
+}
+
+.contacts-tel {
+  font-weight: bold;
+  white-space: nowrap;
+  transition: 0.2s linear text-shadow;
+}
+
+.contacts-tel:hover {
+  text-shadow: 0 0 5px var(--secondary-blue-color);
+  transform: none;
+}
+
+/* --- CONTACTS FORM --- */
+
+.contacts-form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2.5em;
+  width: calc(100vw - 2 * var(--page-side-padding));
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.contacts-form-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.contacts-form-wrapper > * {
+  flex: 1 1 400px;
+}
+
+.contacts-form-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3em;
+}
+
+.contacts-form-image {
+  position: relative;
+  max-width: 508px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contacts-form-info {
+  margin-bottom: 1.5em;
+}
+
+.contacts-form-input {
+  font-size: 1.25rem;
+  background-color: var(--bg-yellow-color);
+  margin-bottom: 1.75em;
+}
+
+.instructions-link,
+.more-link,
+.donat-link,
+.subscribe-btn {
+  display: inline-block;
+  padding: 1.11em 2em;
+  background-color: var(--secondary-blue-color);
+  border-radius: 99em;
+  /* в мобільному / десктопному макетах розмір шрифта цих елементів не змінюється */
+  font-size: 18px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.subscribe-btn {
+  transition: 0.2s linear transform;
+}
+
+.contacts-form-input,
+.subscribe-btn {
+  font-family: inherit;
+  padding: 1.25em 2.5em;
+  width: 100%;
+  border-radius: 99em;
+  border: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .content-wrapper {
+    padding-left: var(--page-side-padding);
+    padding-right: var(--page-side-padding);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* Всі розміри з rem та їх похідні автоматично зміняться */
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .scene {
+    flex-wrap: wrap-reverse;
+    padding: 0;
+  }
+
+  .scene > * {
+    width: 100%;
+  }
+
+  .scene-text-wrapper {
+    padding: 2.1em;
+  }
+
+  .scene-image {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 65px;
+  }
+
+  .first-screen-wrapper {
+    padding-top: 113px;
+  }
+
+  .header-bg {
+    display: none;
+  }
+
+  /* Бургер меню */
+  .page-header {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: 0.5s ease-in-out transform;
+    height: auto;
+    padding: 100px 0 100px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    font-size: 18px;
+    font-variant: small-caps;
+  }
+
+  .logo {
+    margin: 0;
+    align-self: start;
+  }
+
+  .burger-lines {
+    position: fixed;
+    z-index: 4;
+    top: 42px;
+    right: 20px;
+    width: 42px;
+    height: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.2s linear transform;
+  }
+
+  .burger-lines:hover {
+    transform: scale(1.1);
+  }
+
+  .burger-line {
+    background-color: var(--secondary-blue-color);
+    width: 100%;
+    height: 3px;
+  }
+
+  /* Показуємо бургер меню */
+  .burger-checkbox:checked + .page-header {
+    transform: translateY(0);
+  }
+
+  .burger-checkbox:checked ~ .page-main,
+  .burger-checkbox:checked ~ .page-footer {
+    filter: blur(20px) opacity(75%);
+  }
+
+  .page-main {
+    margin-top: 0;
+  }
+
+  .page-main,
+  .page-footer {
+    filter: none;
+    transition: 0.5s ease-in-out filter;
+  }
+
+  .woman-with-flag {
+    left: 50px;
+    width: calc(537px + 46%);
+  }
+
+  .benefits {
+    background: none;
+    padding: 128px 0 0;
+  }
+
+  .benefits-description-wrapper {
+    padding: 283px 13px 40px 17px;
+  }
+
+  .benefits-gifts {
+    top: 128px;
+    right: 50%;
+    transform: translate(50%, calc(-16 / 43 * 100%));
+    width: 100%;
+    max-width: 337px;
+  }
+
+  .how-to-get-into-description {
+    margin-bottom: 82px;
+  }
+
+  .how-to-get-into-goal {
+    margin-bottom: 15px;
+  }
+
+  .current-amounts {
+    margin-bottom: 67px;
+  }
+
+  .contacts-wrapper {
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  .contacts-wrapper > * {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 50px;
+    line-height: var(--closely-line-height);
+    text-align: left;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: var(--closely-line-height);
+  }
+
+  .h2-description {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .h2-additional-description {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .first-screen-description,
+  .contacts-numbers,
+  .contacts-form-input {
+    font-size: 16px;
+  }
+
+  .content-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .festival-program {
+    margin: 100px 0 55px;
+  }
+
+  .scene {
+    margin: 50px 0;
+  }
+
+  .scene-count {
+    margin-bottom: 20px;
+  }
+
+  .scene-place {
+    margin-bottom: 57px;
+  }
+
+  .festival-program-footer {
+    display: none;
+  }
+
+  .current-amount {
+    line-height: var(--closely-line-height);
+  }
+
+  .how-to-get-into {
+    margin: 100px 0 65px;
+  }
+
+  .page-footer {
+    padding-top: 70px;
+    padding-bottom: 0;
+  }
+
+  .contacts-form-container {
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 72px;
+  }
+
+  .contacts-form-info {
+    margin-bottom: 63px;
+  }
+
+  .woman-with-flag {
+    left: -50px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  .current-amount {
+    font-size: 40px;
+  }
 }

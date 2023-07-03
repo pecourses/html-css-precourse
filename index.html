@@ -1,25 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Позиціонування</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-  
-  <nav>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo neque, doloribus fuga eveniet voluptate facere hic molestiae, minima ab blanditiis necessitatibus. Quaerat cupiditate, rem est expedita excepturi animi facilis asperiores.</nav>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Фестиваль Перемоги України</title>
+  </head>
+  <body>
+    <label class="burger-lines" for="burger-checkbox">
+      <div class="burger-line"></div>
+      <div class="burger-line"></div>
+      <div class="burger-line"></div>
+    </label>
+    <input type="checkbox" id="burger-checkbox" class="burger-checkbox" />
+    <header class="page-header">
+      <div class="content-wrapper nav-container">
+        <nav>
+          <ul class="nav">
+            <li class="logo">
+              <a href="#">
+                <img
+                  class="logo-link"
+                  src="./assets/imgs/logo.png"
+                  alt="logo"
+                />
+              </a>
+            </li>
+            <li class="nav-link"><a href="#contacts">Контакти</a></li>
+            <li class="nav-link"><a href="#">Головна</a></li>
+            <li class="nav-link"><a href="#program">Програма</a></li>
+            <li>
+              <a class="instructions-link" href="#to-get-into">Як потрапити</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="header-bg"></div>
+    <main class="page-main">
+      <section class="first-screen">
+        <div class="first-screen-wrapper content-wrapper">
+          <h1>
+            <span class="new-line">Фестиваль</span>
+            <span class="new-line">Перемоги</span>
+            <span class="new-line">України</span>
+          </h1>
+          <p class="first-screen-description">
+            <span class="new-line"
+              >Свято для усіх українців, які працювали,</span
+            >
+            <span class="new-line">боролися й вірили у перемогу</span>
+          </p>
+          <img
+            class="woman-with-flag"
+            src="./assets/imgs/medium-shot-woman-holding-ukranian-flag-full.png"
+            alt="Дівчина з Прапором Украіни"
+          />
+        </div>
+      </section>
+      <div class="content-wrapper">
+        <section id="program" class="festival-program">
+          <header class="festival-program-header">
+            <h2>Програма фестивалю</h2>
+            <p class="scene-count h2-description">
+              3 сцени, щоб добре й із задоволенням провести час
+            </p>
+            <p class="scene-place h2-additional-description">
+              Усі сцени розташовані так, щоб вам було зручно ходити між ними, і
+              вони одна одну не глушили
+            </p>
+          </header>
+          <article class="scene">
+            <div class="scene-text-wrapper">
+              <h3>Сцена Перемоги</h3>
+              <p class="scene-description">Розбудова України після війни</p>
+              <ul class="events-list">
+                <li class="event-item">
+                  <p class="event">Виступ Президента України</p>
+                  <p class="event-time">10:00-12:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Виступ представників ЄС</p>
+                  <p class="event-time">13:00-14:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Виступ представників НАТО</p>
+                  <p class="event-time">14:00-15:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Гімн України</p>
+                  <p class="event-time">21:25-21:30</p>
+                </li>
+              </ul>
+            </div>
+            <div class="scene-image-wrapper">
+              <img
+                class="scene-image"
+                src="./assets/imgs/scene-1.png"
+                alt="Подія в конференц-залі"
+              />
+            </div>
+          </article>
+          <article class="scene">
+            <div class="scene-text-wrapper">
+              <h3>Сцена "Музика"</h3>
+              <ul class="events-list">
+                <li class="event-item">
+                  <p class="event">Артем Квасоваров</p>
+                  <p class="event-time">14:00-15:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Степан Мега</p>
+                  <p class="event-time">16:00-17:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Гурт “Протитіла”</p>
+                  <p class="event-time">17:00-18:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Гурт “Надвірна”</p>
+                  <p class="event-time">18:00-19:00</p>
+                </li>
+              </ul>
+            </div>
 
-  <div class="parent">
-    <div class="child child1">1</div>
-    <div class="child child2">2</div>
-    <div class="child child3">3</div>
-    <div class="child child4" onclick="window.scrollTo(0,0)">4</div>
-    <div class="child child5">5</div>
-    <div class="child child6">6</div>
-  </div>
-  
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores eius, dicta cupiditate quos quisquam esse labore libero sapiente unde rerum vel. Nam aliquam atque esse in dolorum voluptas similique quibusdam soluta quis incidunt iste, aperiam dolores aut labore consectetur, placeat totam quas accusantium molestias at ullam explicabo dolorem. Molestias quam, reiciendis corporis accusantium incidunt atque beatae assumenda architecto labore, facere ipsum quae dolor libero quas illo autem voluptatum ullam voluptas aspernatur corrupti! Dicta, culpa consectetur. Ipsam rerum culpa deleniti aut autem amet, repudiandae aspernatur adipisci laudantium quisquam quis assumenda tempore atque nulla illum voluptatum qui officiis doloremque dolores consequuntur ab ducimus inventore! Optio, eaque, esse officia eos in facere modi aspernatur ipsam sed voluptatibus corporis tempora explicabo autem soluta quaerat error quo suscipit deleniti. Sint cumque esse perferendis animi, quibusdam aperiam molestias id minima rem reiciendis. Corporis quod nisi cupiditate officia et expedita. Corrupti, laboriosam quidem. Sunt sapiente placeat molestias suscipit? Reprehenderit fuga sequi dolores labore molestias enim, optio at quo architecto tempora facere incidunt harum totam provident pariatur omnis. Exercitationem eligendi expedita at dolores repudiandae quisquam, suscipit distinctio molestias velit id laboriosam? Nam nesciunt, impedit commodi necessitatibus labore magnam asperiores eveniet alias porro rem accusantium eius optio animi tempore velit reiciendis repudiandae sequi repellat recusandae officiis incidunt! Assumenda enim autem deserunt quos quis sunt perspiciatis voluptatem, doloremque voluptate, impedit mollitia, laudantium illo animi inventore nisi! Earum nemo mollitia eveniet placeat neque aspernatur. Esse perferendis tempora doloribus vel? Voluptate quo repellendus enim repudiandae in. Ex maiores sit quaerat sed ipsum error aliquid dolorem ad commodi odio eligendi aut incidunt impedit a dignissimos reiciendis sequi, doloribus nemo expedita ipsam ducimus debitis tempore consequatur! Veritatis culpa obcaecati dolores minima sunt, ullam eaque architecto pariatur, mollitia vero expedita, explicabo similique cumque sit beatae reprehenderit corporis? Molestiae nam beatae consequuntur ex provident temporibus saepe amet qui ipsa veniam sed sunt iure sequi, eos, adipisci nihil, distinctio aperiam eveniet cumque corrupti nesciunt voluptatem dolor illum quas. Dignissimos, non quos commodi odio ad explicabo sequi in similique suscipit saepe dolorum laborum ipsum voluptatum nemo qui adipisci cumque laboriosam accusantium illum, sed nihil. Cum impedit excepturi minus porro, nihil perspiciatis vitae. Voluptatibus debitis commodi modi maiores dolore voluptatem eveniet, molestiae tempora aliquid impedit tenetur adipisci repellendus labore illo saepe consequuntur voluptatum iusto! Sunt, recusandae, ipsa nam maiores autem inventore magni doloremque perferendis laborum voluptas aut eaque, nesciunt repudiandae. Fuga sit dolore omnis quibusdam doloribus fugiat sequi quos dolorem sed non. Dolores, illo fugiat. Sunt modi quas atque voluptatem, voluptates esse magnam. Accusantium ullam natus omnis ea eligendi eveniet facilis similique reiciendis illo maiores inventore saepe ipsam, non laudantium modi veniam ad laborum neque provident tempora. Suscipit quo in minima saepe ratione hic minus placeat, fuga ipsum assumenda error soluta velit nobis culpa consequuntur itaque a aliquam modi! Iste, sint aut provident pariatur architecto aperiam ea vero, exercitationem molestias ullam totam cupiditate eligendi beatae ut doloremque ipsa, sed praesentium sit tenetur suscipit. Nam iure dicta, esse numquam laboriosam repellat soluta nobis quos iste minima, nisi, quaerat ratione ducimus.</p>
+            <div class="scene-image-wrapper">
+              <img
+                class="scene-image"
+                src="./assets/imgs/scene-2.png"
+                alt="Музичний концерт в концертній залі"
+              />
+            </div>
+          </article>
+          <article class="scene">
+            <div class="scene-text-wrapper">
+              <h3>Сцена "Майстер-класи для дітей"</h3>
+              <ul class="events-list">
+                <li class="event-item">
+                  <p class="event">Музей науки</p>
+                  <p class="event-time">14:00-15:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Майстер-клас з ліплення</p>
+                  <p class="event-time">16:00-17:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Майстер-клас з машинобудування</p>
+                  <p class="event-time">17:00-18:00</p>
+                </li>
+                <li class="event-item">
+                  <p class="event">Майстер-клас з робототехніки</p>
+                  <p class="event-time">18:00-19:00</p>
+                </li>
+              </ul>
+            </div>
+            <div class="scene-image-wrapper">
+              <img
+                class="scene-image"
+                src="./assets/imgs/scene-3.png"
+                alt="Діти на майстер-класі"
+              />
+            </div>
+          </article>
+          <footer class="festival-program-footer content-wrapper">
+            <a class="more-link" href="#">Дізнатися більше</a>
+          </footer>
+        </section>
+        <section class="benefits">
+          <h2 class="hidden">Подарунки</h2>
+          <div class="benefits-description-wrapper">
+            <p class="benefits-description h2-description">
+              Кожен учасник фестивалю отримає прапор України та футболку з
+              гербом
+            </p>
+          </div>
+          <img
+            class="benefits-gifts"
+            src="./assets/imgs/benefits-gift.png"
+            alt="Подарунки"
+          />
+        </section>
+        <section id="to-get-into" class="how-to-get-into">
+          <h2>Як потрапити</h2>
+          <p class="how-to-get-into-description h2-additional-description">
+            Фестиваль безкоштовний. Будемо збирати пожертви для відбудови
+            зруйнованих українських міст та сіл.
+          </p>
+          <p class="how-to-get-into-goal h2-description">
+            Наша мета 10 000 000 гривень!
+          </p>
+          <div class="current-amounts">
+            <span class="current-amount">00</span>
+            <span class="current-amount">230</span>
+            <span class="current-amount">025</span>
+          </div>
+          <a class="donat-link" href="#">Зробити пожертву</a>
+        </section>
+      </div>
+    </main>
+    <footer id="contacts" class="page-footer">
+      <section class="contacts-wrapper content-wrapper">
+        <h2>Контакти</h2>
+        <div class="contacts-numbers">
+          <img
+            src="./assets/imgs/phone-logo.png"
+            alt="Логотип телефона"
+            class="contacts-icons"
+          />
+          <p class="contacts-invites">
+            Якщо у вас виникають питання – телефонуйте за номером
+            <a href="tel:+380987654321" class="contacts-tel">0-987-654-321</a>
+          </p>
+          <img
+            src="./assets/imgs/telegram-logo.png"
+            alt="Логотип Telegram"
+            class="contacts-icons"
+          />
+          <img
+            src="./assets/imgs/whatsapp-logo.png"
+            alt="Логотип WhatsApp"
+            class="contacts-icons"
+          />
+          <p class="contacts-invites">Або пишіть нам у чат-бот</p>
+        </div>
+      </section>
 
-</body>
+      <section class="contacts-form-container">
+        <h2 class="hidden">Форма зворотнього зв'язку</h2>
+        <div class="contacts-form-wrapper">
+          <div class="contacts-form-image-wrapper">
+            <img
+              src="./assets/imgs/email.png"
+              alt="Електронний лист"
+              class="contacts-form-image"
+            />
+          </div>
+          <div>
+            <p class="contacts-form-info h2-description">
+              Щоб дізнаватися усі новини фестивалю, підпишися на нашу розсилку
+            </p>
+            <form>
+              <input
+                class="contacts-form-input"
+                type="text"
+                placeholder="Ім'я"
+              />
+              <input
+                class="contacts-form-input"
+                type="email"
+                placeholder="Емейл"
+              />
+              <button class="subscribe-btn" type="submit">Підписатися</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
 </html>
